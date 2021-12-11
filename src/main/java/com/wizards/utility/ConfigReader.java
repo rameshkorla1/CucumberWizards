@@ -13,22 +13,18 @@ public class ConfigReader {
 	
 	public Properties prop;
 	
-	public Properties PropertyReader()
+	public Properties init_prop() throws IOException
 	{
 		prop = new Properties();	
-		File file = new File("./src/test/resources/config/config.properties");	
-		InputStream is = null;		
+			
 		try {
-			is = new FileInputStream(file);
+			FileInputStream file = new FileInputStream("./src/test/resources/config/config.properties");	
+			prop.load(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}		
-		try {
-			prop.load(is);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		return prop;
+
 	}	
 	public String getProperty(String key)
 	{		

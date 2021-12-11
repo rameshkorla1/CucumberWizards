@@ -1,5 +1,6 @@
 package com.wizards.AppHooks;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -21,10 +22,10 @@ public class AppHooks {
 	Properties prop;
 	
 	@Before(order=0)
-	public void getProperty()
+	public void getProperty() throws IOException
 	{
 		configReader = new ConfigReader();
-		prop = configReader.PropertyReader();
+		prop = configReader.init_prop();
 	}	
 	@Before(order=1)
 	public void launchBrowser()

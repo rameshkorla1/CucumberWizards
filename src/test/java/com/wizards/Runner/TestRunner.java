@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		         "timeline:test-output-thread/",
 		         "rerun:target/failedRerun.txt"
 		 },
-		tags="@CreateAccount"
+		tags="@Login"
 		)
 public class TestRunner {
 

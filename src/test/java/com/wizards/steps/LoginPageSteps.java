@@ -1,5 +1,7 @@
 package com.wizards.steps;
 
+import java.util.Properties;
+
 import org.junit.Assert;
 
 import com.wizards.factory.DriverFactory;
@@ -13,6 +15,7 @@ import io.cucumber.java.en.When;
 public class LoginPageSteps {
 	
 	private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
+	Properties prop;
     static String title;
 	@Given("user is on login page")
 	public void user_is_on_login_page() {

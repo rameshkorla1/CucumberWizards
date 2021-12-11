@@ -1,14 +1,36 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "46de1cd3-d366-4833-9c81-5bb00a28134a",
-    "feature": "Create User Account",
-    "scenario": "To create the user Account",
-    "start": 1639211347611,
+    "id": "020d47a8-9a19-4ca7-874c-4dc424be05fb",
+    "feature": "LoginPage Feature",
+    "scenario": "Login with Correct credentials",
+    "start": 1639218402829,
     "group": 1,
     "content": "",
-    "tags": "@createaccount,",
-    "end": 1639211417888,
+    "tags": "@login,",
+    "end": 1639218432397,
+    "className": "passed"
+  },
+  {
+    "id": "b946bfcb-fa8c-4526-970c-77a6f124cab3",
+    "feature": "LoginPage Feature",
+    "scenario": "Forgot Password link",
+    "start": 1639218387506,
+    "group": 1,
+    "content": "",
+    "tags": "@login,",
+    "end": 1639218402805,
+    "className": "failed"
+  },
+  {
+    "id": "bfaa65a8-5356-49eb-84de-acbca05cd898",
+    "feature": "LoginPage Feature",
+    "scenario": "Login Page Title",
+    "start": 1639218372026,
+    "group": 1,
+    "content": "",
+    "tags": "@login,",
+    "end": 1639218387484,
     "className": "passed"
   }
 ]);
