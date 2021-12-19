@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="24736" started-at="2021-12-19T09:20:26Z" finished-at="2021-12-19T09:20:51Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="RunnerTest" duration-ms="24736" started-at="2021-12-19T09:20:26Z" finished-at="2021-12-19T09:20:51Z">
+      <class name="com.wizards.Runner.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="setUpClass" is-config="true" duration-ms="633" started-at="2021-12-19T14:50:26Z" finished-at="2021-12-19T14:50:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="runScenario" duration-ms="20281" started-at="2021-12-19T14:50:27Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-19T14:50:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Contact Us Scenario with different set of Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Contact Us Feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="runScenario" duration-ms="20353" started-at="2021-12-19T14:50:27Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-19T14:50:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Contact Us Scenario with different set of Data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Contact Us Feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="tearDownClass" is-config="true" duration-ms="3736" started-at="2021-12-19T14:50:47Z" finished-at="2021-12-19T14:50:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.wizards.Runner.TestRunner -->
+    </test> <!-- RunnerTest -->
+  </suite> <!-- Suite -->
+</testng-results>

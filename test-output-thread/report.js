@@ -1,32 +1,36 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "32981a71-e29b-47ed-b903-f8b9c0b5b52b",
+    "id": "b97dfc5e-3eed-4655-9c20-3785a07ac10a",
     "feature": "Contact Us Feature",
     "scenario": "Contact Us Scenario with different set of Data",
-    "start": 1639903015240,
-    "group": 1,
+    "start": 1639905627752,
+    "group": 13,
     "content": "",
     "tags": "@contactus,",
-    "end": 1639903031977,
+    "end": 1639905647937,
     "className": "passed"
   },
   {
-    "id": "5fee19b9-9011-474a-95ba-ef9f0dee415e",
+    "id": "1610feb3-c619-4b53-8e3f-577750fd1c00",
     "feature": "Contact Us Feature",
     "scenario": "Contact Us Scenario with different set of Data",
-    "start": 1639902993428,
-    "group": 1,
+    "start": 1639905627710,
+    "group": 14,
     "content": "",
     "tags": "@contactus,",
-    "end": 1639903015231,
+    "end": 1639905647859,
     "className": "passed"
   }
 ]);
 CucumberHTML.timelineGroups.pushArray([
   {
-    "id": 1,
-    "content": "Thread[main,5,main]"
+    "id": 13,
+    "content": "Thread[PoolService-0,5,main]"
+  },
+  {
+    "id": 14,
+    "content": "Thread[PoolService-1,5,main]"
   }
 ]);
 });
