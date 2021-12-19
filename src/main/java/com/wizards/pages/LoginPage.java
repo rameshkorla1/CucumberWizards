@@ -7,15 +7,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.github.javafaker.Faker;
+import com.wizards.utility.ConfigFileReader;
 
 public class LoginPage {
 	
-	private WebDriver driver;
+	public  WebDriver driver;
 	Faker data = new Faker();
+	ConfigFileReader configFileReader;
 	
 	public LoginPage(WebDriver driver)
 	{
 		this.driver = driver;
+		configFileReader= new ConfigFileReader();
 	}
 	// 
 	private By emailId = By.id("email");
@@ -50,6 +53,10 @@ public class LoginPage {
 		driver.findElement(signIbButton).click();
 	}
 	
+	public void navigateTo_HomePage() {
+		driver.get(configFileReader.getApplicationUrl());
+	}
+	
 	public AccountsPage doLogin(String username, String pwd)
 	{
 		System.out.println("login with: "+username+"and"+pwd);
@@ -77,4 +84,6 @@ public class LoginPage {
 //		JavascriptExecutor js = (JavascriptExecutor)driver;
 //		js.executeScript("argument[0].click();", element);
 	}
+	
+	
 }

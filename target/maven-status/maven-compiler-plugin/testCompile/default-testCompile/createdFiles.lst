@@ -2,4 +2,6 @@ com\wizards\steps\LoginPageSteps.class
 com\wizards\Runner\TestRunner.class
 com\wizards\steps\AccountPageSteps.class
 com\wizards\AppHooks\AppHooks.class
+com\wizards\steps\CreateAccountPageSteps.class
+com\wizards\steps\FailedRun.class
 com\wizards\steps\ContactUsPageSteps.class

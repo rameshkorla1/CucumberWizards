@@ -23,4 +23,3 @@ Then user gets accounts section
 |MY WISHLISTS|
 |Home|
 And accounts section count should be 6
-

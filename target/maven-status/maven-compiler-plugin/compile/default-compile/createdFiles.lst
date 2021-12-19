@@ -6,3 +6,4 @@ com\wizards\pages\AccountsPage.class
 com\wizards\pages\LoginPage.class
 com\wizards\utility\ConfigReader.class
 com\wizards\utility\ElementUtil.class
+com\wizards\pages\CreateAccountPage.class

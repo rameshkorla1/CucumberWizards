@@ -1,5 +1,7 @@
-C:\Users\rames\eclipse-workspace\CucumberWizards\src\test\java\com\wizards\steps\LoginPageSteps.java
-C:\Users\rames\eclipse-workspace\CucumberWizards\src\test\java\com\wizards\AppHooks\AppHooks.java
-C:\Users\rames\eclipse-workspace\CucumberWizards\src\test\java\com\wizards\steps\AccountPageSteps.java
-C:\Users\rames\eclipse-workspace\CucumberWizards\src\test\java\com\wizards\Runner\TestRunner.java
-C:\Users\rames\eclipse-workspace\CucumberWizards\src\test\java\com\wizards\steps\ContactUsPageSteps.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\Runner\TestRunner.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\steps\AccountPageSteps.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\AppHooks\AppHooks.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\steps\LoginPageSteps.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\steps\ContactUsPageSteps.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\steps\CreateAccountPageSteps.java
+C:\Users\rames\git\CucumberWizards\CucumberWizards\src\test\java\com\wizards\steps\FailedRun.java

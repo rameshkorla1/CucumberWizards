@@ -9,6 +9,8 @@ import org.junit.Assert;
 
 import com.wizards.factory.DriverFactory;
 import com.wizards.pages.ContactUsPage;
+import com.wizards.pages.LoginPage;
+import com.wizards.utility.ConfigFileReader;
 import com.wizards.utility.ExcelReader;
 
 import io.cucumber.java.en.Given;
@@ -18,10 +20,14 @@ import io.cucumber.java.en.When;
 public class ContactUsPageSteps {
 	
 	private ContactUsPage contactUsPage = new ContactUsPage(DriverFactory.getDriver());
-	
+	ConfigFileReader configFileReader;
+	LoginPage loginPage;
 	@Given("user navigates to contact us page")
 	public void user_navigates_to_contact_us_page() throws InterruptedException {
-		DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");	
+		
+		loginPage = new LoginPage(DriverFactory.getDriver());
+		loginPage.navigateTo_HomePage();
+		//DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");	
 		contactUsPage.clickContactUs();
 		Thread.sleep(5000);
 	}

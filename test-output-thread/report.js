@@ -1,36 +1,25 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "020d47a8-9a19-4ca7-874c-4dc424be05fb",
-    "feature": "LoginPage Feature",
-    "scenario": "Login with Correct credentials",
-    "start": 1639218402829,
+    "id": "32981a71-e29b-47ed-b903-f8b9c0b5b52b",
+    "feature": "Contact Us Feature",
+    "scenario": "Contact Us Scenario with different set of Data",
+    "start": 1639903015240,
     "group": 1,
     "content": "",
-    "tags": "@login,",
-    "end": 1639218432397,
+    "tags": "@contactus,",
+    "end": 1639903031977,
     "className": "passed"
   },
   {
-    "id": "b946bfcb-fa8c-4526-970c-77a6f124cab3",
-    "feature": "LoginPage Feature",
-    "scenario": "Forgot Password link",
-    "start": 1639218387506,
+    "id": "5fee19b9-9011-474a-95ba-ef9f0dee415e",
+    "feature": "Contact Us Feature",
+    "scenario": "Contact Us Scenario with different set of Data",
+    "start": 1639902993428,
     "group": 1,
     "content": "",
-    "tags": "@login,",
-    "end": 1639218402805,
-    "className": "failed"
-  },
-  {
-    "id": "bfaa65a8-5356-49eb-84de-acbca05cd898",
-    "feature": "LoginPage Feature",
-    "scenario": "Login Page Title",
-    "start": 1639218372026,
-    "group": 1,
-    "content": "",
-    "tags": "@login,",
-    "end": 1639218387484,
+    "tags": "@contactus,",
+    "end": 1639903015231,
     "className": "passed"
   }
 ]);

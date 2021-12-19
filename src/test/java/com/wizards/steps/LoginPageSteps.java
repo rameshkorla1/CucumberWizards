@@ -6,6 +6,7 @@ import org.junit.Assert;
 
 import com.wizards.factory.DriverFactory;
 import com.wizards.pages.LoginPage;
+import com.wizards.utility.ConfigFileReader;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,11 +16,15 @@ import io.cucumber.java.en.When;
 public class LoginPageSteps {
 	
 	private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
-	Properties prop;
+	ConfigFileReader configFileReader;
+	
+	
     static String title;
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-		DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");		
+		//DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");	
+		loginPage = new LoginPage(DriverFactory.getDriver());
+		loginPage.navigateTo_HomePage();
 	}
 
 	@When("user gets the title of the page")

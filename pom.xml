@@ -107,7 +107,7 @@
   			   <includes>
   			   <include>**/TestRunner.java</include>
   			   </includes>
-  			   <parallel>all</parallel>
+  			   <parallel>methods</parallel>
   			   <threadCount>4</threadCount>
   			   <perCoreThreadCount>true</perCoreThreadCount>
   			   </configuration>

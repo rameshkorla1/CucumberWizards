@@ -7,14 +7,14 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+		tags="@ContactUs",
 		features = "src/test/resources/features",
 		glue= {"com.wizards.steps","com.wizards.AppHooks"},
 		plugin= {"pretty", 
 				 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		         "timeline:test-output-thread/",
 		         "rerun:target/failedRerun.txt"
-		 },
-		tags="@Login"
+		 }
 		)
 public class TestRunner {
 
