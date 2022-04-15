@@ -1,26 +1,26 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "b97dfc5e-3eed-4655-9c20-3785a07ac10a",
+    "id": "dc4400ea-979f-4950-ac2c-21e97e3da989",
     "feature": "Contact Us Feature",
     "scenario": "Contact Us Scenario with different set of Data",
-    "start": 1639905627752,
+    "start": 1649851555531,
     "group": 13,
     "content": "",
     "tags": "@contactus,",
-    "end": 1639905647937,
-    "className": "passed"
+    "end": 1649851590623,
+    "className": "failed"
   },
   {
-    "id": "1610feb3-c619-4b53-8e3f-577750fd1c00",
+    "id": "f61c41b3-da3c-4ca6-b6e1-096826e1d3a3",
     "feature": "Contact Us Feature",
     "scenario": "Contact Us Scenario with different set of Data",
-    "start": 1639905627710,
+    "start": 1649851555533,
     "group": 14,
     "content": "",
     "tags": "@contactus,",
-    "end": 1639905647859,
-    "className": "passed"
+    "end": 1649851590623,
+    "className": "failed"
   }
 ]);
 CucumberHTML.timelineGroups.pushArray([

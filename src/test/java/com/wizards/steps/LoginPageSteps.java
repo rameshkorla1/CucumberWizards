@@ -16,7 +16,7 @@ import io.cucumber.java.en.When;
 public class LoginPageSteps {
 	
 	private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
-	ConfigFileReader configFileReader;
+	//ConfigFileReader configFileReader;
 	
 	
     static String title;

@@ -4,11 +4,11 @@ import org.junit.runner.RunWith;
 import org.testng.annotations.DataProvider;
 
 import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+//import io.cucumber.junit.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
-//import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
+//@RunWith(Cucumber.class)
 @CucumberOptions(
 		tags="@ContactUs",
 		features = "src/test/resources/features",

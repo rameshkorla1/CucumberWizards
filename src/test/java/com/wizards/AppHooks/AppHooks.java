@@ -11,6 +11,7 @@ import com.wizards.factory.DriverFactory;
 import com.wizards.utility.ConfigReader;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
@@ -38,6 +39,14 @@ public class AppHooks {
 	public void quitBrowser()
 	{
 		driver.quit();
+	}
+	@AfterStep
+	public void stepScreenshot(Scenario scenario) throws IOException
+	{
+		//String screenshotName =scenario.getName().replaceAll(" ", "_");
+		//scenario.attach(Screenshot.getByteScreenshot(driver), "image/png", "");
+		 final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	     scenario.attach(screenshot, "image/png", "image"); 
 	}
 	@After(order=1)
 	public void tearDown(Scenario scenario)
