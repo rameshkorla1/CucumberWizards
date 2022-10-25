@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.wizards.factory.DriverFactory;
 import com.wizards.utility.ConfigReader;
+import com.wizards.utility.sendToEmail;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
@@ -37,16 +38,20 @@ public class AppHooks {
 	}	
 	@After(order=0)
 	public void quitBrowser()
-	{
+	{	
 		driver.quit();
+//		sendToEmail sendEmail = new sendToEmail();
+//		sendEmail.emailSending();
+		
 	}
 	@AfterStep
 	public void stepScreenshot(Scenario scenario) throws IOException
 	{
 		//String screenshotName =scenario.getName().replaceAll(" ", "_");
 		//scenario.attach(Screenshot.getByteScreenshot(driver), "image/png", "");
-		 final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-	     scenario.attach(screenshot, "image/png", "image"); 
+		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	    scenario.attach(screenshot, "image/png", "");
+		//scenario.attach(screenshot, "image/png", screenshotName);
 	}
 	@After(order=1)
 	public void tearDown(Scenario scenario)

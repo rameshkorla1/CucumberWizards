@@ -1,6 +1,7 @@
 package com.wizards.utility;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,7 +29,19 @@ public class ConfigFileReader {
 			throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
 		}		
 	}
-	
+	public Properties init_prop() throws IOException
+	{
+		properties = new Properties();	
+			String path = System.getProperty("user.dir")+"/src/test/resources/config/config.properties";
+		try {
+			FileInputStream file = new FileInputStream(path);	
+			properties.load(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}		
+		return properties;
+
+	}	
 	public String getDriverPath(){
 		String driverPath = properties.getProperty("driverPath");
 		if(driverPath!= null) return driverPath;

@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="45958" started-at="2022-04-13T12:05:54Z" finished-at="2022-04-13T12:06:40Z">
+  <suite name="Suite" duration-ms="46492" started-at="2022-08-17T04:27:28Z" finished-at="2022-08-17T04:28:14Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@7823a2f9]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="RunnerTest" duration-ms="45958" started-at="2022-04-13T12:05:54Z" finished-at="2022-04-13T12:06:40Z">
+    <test name="RunnerTest" duration-ms="46492" started-at="2022-08-17T04:27:28Z" finished-at="2022-08-17T04:28:14Z">
       <class name="com.wizards.Runner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="setUpClass" is-config="true" duration-ms="902" started-at="2022-04-13T17:35:54Z" finished-at="2022-04-13T17:35:55Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.wizards.Runner.TestRunner@7823a2f9]" name="setUpClass" is-config="true" duration-ms="879" started-at="2022-08-17T09:57:28Z" finished-at="2022-08-17T09:57:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="runScenario" duration-ms="35234" started-at="2022-04-13T17:35:55Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-13T17:36:30Z">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@7823a2f9]" name="runScenario" duration-ms="30457" started-at="2022-08-17T09:57:29Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-17T09:57:59Z">
           <params>
             <param index="0">
               <value>
@@ -27,53 +27,45 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.UnsupportedCommandException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"div#center_column p"}
-  (Session info: chrome=100.0.4896.88)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+              <![CDATA[getElementDomAttribute
 Build info: version: '4.1.0', revision: '87802e897b'
 System info: host: 'LAPTOP-F8VFH2TR', ip: '192.168.29.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9b6142934980403071fb55cd1f9394d9, findElement {using=css selector, value=div#center_column p}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.88, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\rames\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60365}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60365/devtoo..., se:cdpVersion: 100.0.4896.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9b6142934980403071fb55cd1f9394d9]]>
+Driver info: org.openqa.selenium.opera.OperaDriver
+Command: [67e8a660c18d9bd1fa80e724113ae311, getElementDomAttribute {id=0.3065722122545369-1, name=multiple}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: opera, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58227}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, opera: {operadriverVersion: 103.0.5060.66 (20b1569438a8..., userDataDir: C:\Users\rames\AppData\Loca...}, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 103.0.5060.134, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[OperaDriver: opera on WINDOWS (67e8a660c18d9bd1fa80e724113ae311)] -> id: id_contact]
+Session ID: 67e8a660c18d9bd1fa80e724113ae311]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div#center_column p"}
-  (Session info: chrome=100.0.4896.88)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+              <![CDATA[org.openqa.selenium.UnsupportedCommandException: getElementDomAttribute
 Build info: version: '4.1.0', revision: '87802e897b'
 System info: host: 'LAPTOP-F8VFH2TR', ip: '192.168.29.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9b6142934980403071fb55cd1f9394d9, findElement {using=css selector, value=div#center_column p}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.88, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\rames\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60365}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60365/devtoo..., se:cdpVersion: 100.0.4896.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9b6142934980403071fb55cd1f9394d9
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Driver info: org.openqa.selenium.opera.OperaDriver
+Command: [67e8a660c18d9bd1fa80e724113ae311, getElementDomAttribute {id=0.3065722122545369-1, name=multiple}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: opera, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58227}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, opera: {operadriverVersion: 103.0.5060.66 (20b1569438a8..., userDataDir: C:\Users\rames\AppData\Loca...}, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 103.0.5060.134, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[OperaDriver: opera on WINDOWS (67e8a660c18d9bd1fa80e724113ae311)] -> id: id_contact]
+Session ID: 67e8a660c18d9bd1fa80e724113ae311
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:250)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
-	at com.wizards.pages.ContactUsPage.getSuccessMessg(ContactUsPage.java:48)
-	at com.wizards.steps.ContactUsPageSteps.it_shows_a_succesful_message(ContactUsPageSteps.java:55)
-	at ?.it shows a succesful message "Your message has been successfully sent to our team."(file:///C:/OldLaptop/Selenium/CucumberWizards/src/test/resources/features/ContactUs.feature:9)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.getDomAttribute(RemoteWebElement.java:145)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:54)
+	at com.wizards.pages.ContactUsPage.fillContactUsForm(ContactUsPage.java:36)
+	at com.wizards.steps.ContactUsPageSteps.user_fills_the_form_from_given_sheetname_and_rownumber(ContactUsPageSteps.java:44)
+	at ?.user fills the form from given sheetname "Contactus" and rownumber 0(file:///C:/OldLaptop/Selenium/CucumberWizards/src/test/resources/features/ContactUs.feature:7)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.UnsupportedCommandException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="runScenario" duration-ms="35234" started-at="2022-04-13T17:35:55Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-04-13T17:36:30Z">
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.wizards.Runner.TestRunner@7823a2f9]" name="runScenario" duration-ms="31276" started-at="2022-08-17T09:57:29Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-08-17T09:58:00Z">
           <params>
             <param index="0">
               <value>
@@ -86,53 +78,45 @@ Session ID: 9b6142934980403071fb55cd1f9394d9
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.UnsupportedCommandException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"div#center_column p"}
-  (Session info: chrome=100.0.4896.88)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+              <![CDATA[getElementDomAttribute
 Build info: version: '4.1.0', revision: '87802e897b'
 System info: host: 'LAPTOP-F8VFH2TR', ip: '192.168.29.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [81c5a0ae7621465ecef937ca78e67a5b, findElement {using=css selector, value=div#center_column p}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.88, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\rames\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60364}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60364/devtoo..., se:cdpVersion: 100.0.4896.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 81c5a0ae7621465ecef937ca78e67a5b]]>
+Driver info: org.openqa.selenium.opera.OperaDriver
+Command: [c3deab881dc84787de4c1cec9ce51c3c, getElementDomAttribute {id=0.8835125241179975-1, name=multiple}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: opera, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58228}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, opera: {operadriverVersion: 103.0.5060.66 (20b1569438a8..., userDataDir: C:\Users\rames\AppData\Loca...}, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 103.0.5060.134, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[OperaDriver: opera on WINDOWS (c3deab881dc84787de4c1cec9ce51c3c)] -> id: id_contact]
+Session ID: c3deab881dc84787de4c1cec9ce51c3c]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div#center_column p"}
-  (Session info: chrome=100.0.4896.88)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+              <![CDATA[org.openqa.selenium.UnsupportedCommandException: getElementDomAttribute
 Build info: version: '4.1.0', revision: '87802e897b'
 System info: host: 'LAPTOP-F8VFH2TR', ip: '192.168.29.21', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [81c5a0ae7621465ecef937ca78e67a5b, findElement {using=css selector, value=div#center_column p}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.88, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: C:\Users\rames\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60364}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60364/devtoo..., se:cdpVersion: 100.0.4896.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 81c5a0ae7621465ecef937ca78e67a5b
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Driver info: org.openqa.selenium.opera.OperaDriver
+Command: [c3deab881dc84787de4c1cec9ce51c3c, getElementDomAttribute {id=0.8835125241179975-1, name=multiple}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: opera, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58228}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, opera: {operadriverVersion: 103.0.5060.66 (20b1569438a8..., userDataDir: C:\Users\rames\AppData\Loca...}, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 103.0.5060.134, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[OperaDriver: opera on WINDOWS (c3deab881dc84787de4c1cec9ce51c3c)] -> id: id_contact]
+Session ID: c3deab881dc84787de4c1cec9ce51c3c
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:250)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
-	at com.wizards.pages.ContactUsPage.getSuccessMessg(ContactUsPage.java:48)
-	at com.wizards.steps.ContactUsPageSteps.it_shows_a_succesful_message(ContactUsPageSteps.java:55)
-	at ?.it shows a succesful message "Your message has been successfully sent to our team."(file:///C:/OldLaptop/Selenium/CucumberWizards/src/test/resources/features/ContactUs.feature:9)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.getDomAttribute(RemoteWebElement.java:145)
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:54)
+	at com.wizards.pages.ContactUsPage.fillContactUsForm(ContactUsPage.java:36)
+	at com.wizards.steps.ContactUsPageSteps.user_fills_the_form_from_given_sheetname_and_rownumber(ContactUsPageSteps.java:44)
+	at ?.user fills the form from given sheetname "Contactus" and rownumber 1(file:///C:/OldLaptop/Selenium/CucumberWizards/src/test/resources/features/ContactUs.feature:7)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.UnsupportedCommandException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.wizards.Runner.TestRunner@51565ec2]" name="tearDownClass" is-config="true" duration-ms="9797" started-at="2022-04-13T17:36:30Z" finished-at="2022-04-13T17:36:40Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.wizards.Runner.TestRunner@7823a2f9]" name="tearDownClass" is-config="true" duration-ms="14319" started-at="2022-08-17T09:58:00Z" finished-at="2022-08-17T09:58:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

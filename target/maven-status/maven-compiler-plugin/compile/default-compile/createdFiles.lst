@@ -1,8 +1,11 @@
 com\wizards\utility\Constants.class
+com\wizards\utility\sendToEmail.class
 com\wizards\pages\ContactUsPage.class
+com\wizards\utility\sendToEmail$1.class
 com\wizards\utility\ExcelReader.class
 com\wizards\factory\DriverFactory.class
 com\wizards\pages\AccountsPage.class
+com\wizards\utility\ConfigFileReader.class
 com\wizards\pages\LoginPage.class
 com\wizards\utility\ConfigReader.class
 com\wizards\utility\ElementUtil.class
