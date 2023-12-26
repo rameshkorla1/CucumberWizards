@@ -12,7 +12,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		stepNotifications = true,
-		tags="@ContactUs",
+		tags="@Login",
 		features = "src/test/resources/features",
 		glue= {"com.wizards.steps","com.wizards.AppHooks"},
 		plugin= {"pretty", 

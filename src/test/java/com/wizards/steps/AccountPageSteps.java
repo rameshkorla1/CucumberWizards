@@ -28,7 +28,8 @@ public class AccountPageSteps {
 		String username =credList.get(0).get("username");
 		String password =credList.get(0).get("password");
 		loginPage.navigateTo_HomePage();
-		//DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");		
+		//DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+		
 		accountsPage =loginPage.doLogin(username, password);
 	}
 
@@ -42,7 +43,7 @@ public class AccountPageSteps {
 	public void user_gets_accounts_section(DataTable sectionsTable) {
 		
 		List<String> expectedAccountSectionList = sectionsTable.asList();
-		System.out.println("Expected accounts section list: "+expectedAccountSectionList);
+		System.out.println("Expected accounts section list: "+ expectedAccountSectionList);
 		List<String> actualAccountSectionList = accountsPage.getAccountsSectionList();
 		System.out.println("Actual accounts section list: "+actualAccountSectionList);
 		Assert.assertTrue(expectedAccountSectionList.containsAll(actualAccountSectionList));
@@ -50,7 +51,7 @@ public class AccountPageSteps {
 	@Then("accounts section count should be {int}")
 	public void accounts_section_count_should_be(Integer expectedSectionCount) {
 
-		Assert.assertTrue(accountsPage.getAccountsSectionCount()==expectedSectionCount);
+		Assert.assertTrue(accountsPage.getAccountsSectionCount()== expectedSectionCount);
 	}
 	
 }

@@ -20,8 +20,8 @@ public class LoginPageSteps {
 	
 	
     static String title;
-	@Given("user is on login page")
-	public void user_is_on_login_page() {
+	@Given("user is on application page")
+	public void user_is_on_application_page() {
 		//DriverFactory.getDriver().get("http://automationpractice.com/index.php?controller=authentication&back=my-account");	
 		loginPage = new LoginPage(DriverFactory.getDriver());
 		loginPage.navigateTo_HomePage();
@@ -29,6 +29,7 @@ public class LoginPageSteps {
 
 	@When("user gets the title of the page")
 	public void user_gets_the_title_of_the_page() {
+		
 	    title =loginPage.getLoginPageTitle();
 		System.out.println("login page title is:" +title);
 	}
@@ -47,14 +48,22 @@ public class LoginPageSteps {
 	public void forgot_your_password_link_should_be_displayed() {
 		  Assert.assertTrue(loginPage.isForgotPasswordLinkExist());
 	}
+	
+	@When("user clicks on SignIn tab")
+	public void user_clicks_on_SignIn_tab()
+	{
+		loginPage.clickOnSignIn();
+	}
 
 	@When("user enter the username {string}")
 	public void user_enter_the_username(String username) {
+		loginPage.waitToTimeLoad(4);
 	    loginPage.enterUserName(username);
 	}
 
 	@When("user enter the password {string}")
 	public void user_enter_the_password(String password) {
+		loginPage.waitToTimeLoad(2);
 		loginPage.enterPassword(password);
 	}
 

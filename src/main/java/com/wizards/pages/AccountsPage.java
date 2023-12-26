@@ -14,6 +14,7 @@ public class AccountsPage {
 	
 	private By accountSections = By.cssSelector("div[id='center_column'] span");
 	
+	
 	// constructor
 	public AccountsPage(WebDriver driver)
 	{
@@ -26,7 +27,7 @@ public class AccountsPage {
 	public int getAccountsSectionCount()
 	{
 		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(accountSections));
-		return driver.findElements(accountSections).size()-1;
+		return driver.findElements(accountSections).size();
 	}
 	
 	public List<String> getAccountsSectionList()

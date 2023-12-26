@@ -12,9 +12,9 @@ public class CreateAccountPage {
 	private WebDriver driver;
 	Faker data = new Faker();
 	
-	private By firstName = By.id("customer_firstname");
+	public By firstName = By.id("customer_firstname");
 	private By lastName = By.id("customer_lastname");
-	private By Password = By.id("passwd");
+	public By Password = By.id("passwd");
 	private By Days = By.id("days");
 	private By Months = By.id("months");
 	private By Years = By.id("years");
@@ -31,7 +31,7 @@ public class CreateAccountPage {
 	private By AliasAddress =  By.id("alias");
 	
 	private By Register = By.cssSelector("button[id='submitAccount']");
-	private By successMessg = By.cssSelector("div#center_column p");
+	private By successMessg = By.xpath("//*[@id='center_column']//p[1]");
 	
 	public CreateAccountPage(WebDriver driver)
 	{
@@ -54,11 +54,13 @@ public class CreateAccountPage {
 		return lastname;
 	}
 	
-	public void getPassword()
+	public String getPassword()
 	{
 		data = new Faker();
 		String Pswd = data.internet().password();
 		driver.findElement(Password).sendKeys(Pswd);
+		System.out.println("Password is:" + Pswd);
+		return Pswd;
 	}
 
 	
@@ -144,7 +146,7 @@ public class CreateAccountPage {
     }
     public String getSuccessMessg()
 	{
-		return driver.findElement(successMessg).getText();
+		return driver.findElement(successMessg).getText().trim();
 	}
 	
 }

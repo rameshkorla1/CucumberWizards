@@ -18,6 +18,8 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 
 public class ExcelReader {
 	
+	private Workbook workbook;
+	
 	public List<Map<String, String>> getData(String excelFilePath, String sheetName)
 			throws  IOException, InvalidFormatException {
 		Sheet sheet = getSheetByName(excelFilePath, sheetName);
@@ -43,6 +45,12 @@ public class ExcelReader {
 	private Workbook getWorkBook(String excelFilePath) throws IOException, InvalidFormatException {
 		return WorkbookFactory.create(new File(excelFilePath));
 	}
+	//
+	public void closeWorkbook() throws IOException {
+        if (workbook != null) {
+            workbook.close();
+        }
+    }
 
 	private List<Map<String, String>> readSheet(Sheet sheet) {
 		Row row;
@@ -59,6 +67,9 @@ public class ExcelReader {
 					columnMapdata.putAll(getCellValue(sheet, row, currentColumn));
 				}
 				excelRows.add(columnMapdata);
+				// Add your condition to break the loop here
+				
+
 			}
 		}
 		return excelRows;

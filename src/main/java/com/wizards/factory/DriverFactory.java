@@ -1,19 +1,25 @@
 package com.wizards.factory;
 
+import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
+
 
 public class DriverFactory {
 	
 	private WebDriver driver;	
 	public Properties prop;
+	public WebDriverWait wait;
+	
 	private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 	
 	/**
@@ -30,24 +36,20 @@ public class DriverFactory {
 		
 		if(browser.equals("chrome"))
 		{
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
 		}
 		else if(browser.equals("firefox"))
 		{
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
 		}
 		else if(browser.equals("edge"))
 		{
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.edgedriver().setup();
 			tlDriver.set(new EdgeDriver());
 		}
-		else if(browser.equals("opera"))
-		{
-			WebDriverManager.operadriver().setup();
-			tlDriver.set(new OperaDriver());
-		}
+		
 		else
 		{
 			System.out.println("Please pass the correct browset vlaue: "+browser);
@@ -67,4 +69,21 @@ public class DriverFactory {
 		return tlDriver.get();
 	}
 	
+	//WaitCondtions
+	public void waitForElementToAppear(By locator)
+	{
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
+	
+	public void waitForElementToClick()
+	{
+		
+	}
+	
+	public void waitForPageLoad()
+	{
+		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete'"));
+	}
 }

@@ -56,8 +56,8 @@ public class ContactUsPageSteps {
 		
 	}
 
-	@Then("it shows a succesful message {string}")
-	public void it_shows_a_succesful_message(String expectedSuccessMessage) {
+	@Then("it shows a successful message {string}")
+	public void it_shows_a_successful_message(String expectedSuccessMessage) {
 		String actualSuccMessg = contactUsPage.getSuccessMessg();
 		
 		Assert.assertEquals(actualSuccMessg, expectedSuccessMessage);

@@ -8,7 +8,7 @@ public class ContactUsPage {
 	
 	private WebDriver driver;
 	
-	private By contactUs = By.cssSelector("a[title='Contact Us']");
+	private By contactUs = By.xpath("//a[@title='Contact us']");
 	private By subjectHeading = By.id("id_contact");
 	private By email = By.id("email");
 	private By orderRef = By.id("id_order");
