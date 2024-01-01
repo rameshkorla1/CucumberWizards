@@ -1,1 +1,6 @@
 /target/
+/ExtentReports/
+/test-output/
+/test-output-thread/
+/target/
+/PdfReport/

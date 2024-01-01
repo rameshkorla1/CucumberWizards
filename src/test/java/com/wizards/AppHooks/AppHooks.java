@@ -32,7 +32,8 @@ public class AppHooks {
 	@Before(order=1)
 	public void launchBrowser()
 	{
-		String browserName = prop.getProperty("browser");
+		String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") :prop.getProperty("browser");
+		//String browserName = prop.getProperty("browser");
 		driverFactory = new DriverFactory();
 		driver=driverFactory.init_driver(browserName);
 	}	
