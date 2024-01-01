@@ -20,13 +20,12 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 		         "rerun:target/failedRerun.txt"
 		 }, monochrome = true
 		)
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner {
 	
-	@Override
-    @DataProvider(parallel = true)
-    public Object[][] scenarios() 
-	{
-          return super.scenarios();
-    }
+//	@DataProvider(parallel = true)
+//    public Object[][] scenarios() 
+//	{
+//         return super.scenarios();
+//    }
 
 }

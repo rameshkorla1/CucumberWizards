@@ -1,6 +1,7 @@
-Feature: Contact Us Feature
 
 @ContactUs
+Feature: Contact Us Feature
+
 Scenario Outline: Contact Us Scenario with different set of Data
 
 Given user navigates to contact us page
