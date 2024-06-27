@@ -1,4 +1,4 @@
-@AccountPage
+@AccountPage  @Regression
 Feature: Account Page Feature
 
 Background:
