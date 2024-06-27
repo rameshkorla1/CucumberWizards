@@ -1,6 +1,6 @@
 name: wizardsjob
 concurrency:
-  group: mailroom.automation
+  group: CucumberWizards
   cancel-in-progress: false
 
 on:
@@ -51,7 +51,7 @@ jobs:
         cache: maven
         
     - name: run-tests
-      working-directory: mailroom_automation
+      working-directory: CucumberWizards
       run: |
         mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@Regression" -Dbrowser=chrome
     - name: Upload test results
