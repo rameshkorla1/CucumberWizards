@@ -1,11 +1,11 @@
 name: Wizardsjob
 concurrency:
-  group: CucumberWizards
+  group: mailroom.automation
   cancel-in-progress: false
 
 on:
   schedule:
-    - cron:  '0 0 * * 1-5'
+    - cron: '0 0 * * 1-5'
   workflow_dispatch:
     inputs:
       tag: 
@@ -39,30 +39,37 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    timeout-minutes: 360
+    timeout-minutes: 720
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: maven
-        
-    - name: run-tests
-      working-directory: CucumberWizards
-      run: |
-        mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@Regression" -Dbrowser=chrome
-    - name: Upload test results
-      uses: actions/upload-artifact@v2
-      if: always()
-      with:
-         name: test-results
-         path: CucumberWizards/target/test-results/*.xml
+      - uses: actions/checkout@v4
 
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
-      with:
-         files: |
-            CucumberWizards/target/test-results/*.xml
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Set up Maven
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: Run Maven tests
+        working-directory: CucumberWizards
+        run: mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ github.event.inputs.tag }}" -Dbrowser=${{ github.event.inputs.browser }}
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+           name: test-results
+           path: CucumberWizards/target/test-results/*.xml
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+           files: |
+              CucumberWizards/target/test-results/*.xml
