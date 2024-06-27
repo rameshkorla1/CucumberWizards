@@ -9,7 +9,6 @@ on:
         description: tag
         required: false
         options:
-          - ALL_TESTS
           - Regression
           - AccountPage
           - ContactUs
