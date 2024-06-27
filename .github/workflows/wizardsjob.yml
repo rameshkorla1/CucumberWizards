@@ -52,7 +52,7 @@ jobs:
     - name: run-tests
       working-directory: CucumberWizards
       run: |
-        mvn clean verify 
+        mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@Regression" -Dbrowser=chrome
     - name: Upload test results
       uses: actions/upload-artifact@v2
       if: always()
