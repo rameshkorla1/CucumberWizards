@@ -18,7 +18,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 				 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		         "timeline:test-output-thread/",
 		         "rerun:target/failedRerun.txt"
-		 }, monochrome = true
+		 }, monochrome = true, tags="@AccountPage"
 		)
 public class TestRunner {
 	
