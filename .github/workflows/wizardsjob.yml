@@ -1,6 +1,6 @@
 name: Wizardsjob
 concurrency:
-  group: mailroom.automation
+  group: CucumberWizards
   cancel-in-progress: false
 
 on:
