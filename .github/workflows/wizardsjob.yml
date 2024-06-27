@@ -39,7 +39,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    timeout-minutes: 720
+    timeout-minutes: 360
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 1.8
