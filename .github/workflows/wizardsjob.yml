@@ -61,7 +61,7 @@ jobs:
       - name: Run Maven tests
         working-directory: CucumberWizards
         run: |
-          mvn clean verify -Dcucumber.feature=./src/test/resources/features -Dcucumber.filter.tags=${{ inputs.tag }}
+          mvn clean verify -Dcucumber.feature=./src/test/resources/features -Dcucumber.filter.tags=${{ inputs.tag }} -Dbrowser=${{ inputs.browser }}
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
