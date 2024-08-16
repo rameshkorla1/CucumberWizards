@@ -5,9 +5,6 @@ concurrency:
   cancel-in-progress: false
 
 on:
-  schedule:
-    # Uncomment and adjust the cron schedule as needed
-    # - cron: '0 0 * * 1-5'
   workflow_dispatch:
     inputs:
       tag: 
@@ -30,6 +27,10 @@ on:
           - firefox
         default: chrome
         required: true
+
+  # Uncomment the schedule section below to enable cron scheduling
+  # schedule:
+  #   - cron: '0 0 * * 1-5'
 
 permissions:
   contents: read
