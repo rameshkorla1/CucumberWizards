@@ -1,7 +1,7 @@
-name: Wizardsjob
+name: Test_Regression_job
 
 concurrency:
-  group: CucumberWizards
+  group: Wizards
   cancel-in-progress: false
 
 on:
