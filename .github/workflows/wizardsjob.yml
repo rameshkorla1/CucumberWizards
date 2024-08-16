@@ -66,7 +66,7 @@ jobs:
           ls -R
 
       - name: Run Maven tests
-        working-directory: CucumberWizards/CucumberWizards
+        working-directory: CucumberWizards
         run: |
           mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=${{ inputs.tag }}"-D"browser=${{ inputs.browser }}"
 
