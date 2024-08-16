@@ -1,11 +1,13 @@
 name: Wizardsjob
+
 concurrency:
-  group: mailroom.automation
+  group: CucumberWizards
   cancel-in-progress: false
 
 on:
   schedule:
-    #- cron: '0 0 * * 1-5'
+    # Uncomment and adjust the cron schedule as needed
+    # - cron: '0 0 * * 1-5'
   workflow_dispatch:
     inputs:
       tag: 
@@ -58,18 +60,19 @@ jobs:
 
       - name: Run Maven tests
         working-directory: CucumberWizards
-        run: mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ github.event.inputs.tag }}" -Dbrowser=${{ github.event.inputs.browser }}
+        run: |
+          mvn clean verify -Dcucumber.feature=./src/test/resources/features -Dcucumber.filter.tags=${{ inputs.tag }}
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
         if: always()
         with:
-           name: test-results
-           path: CucumberWizards/target/test-results/*.xml
+          name: test-results
+          path: CucumberWizards/target/test-results/*.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-           files: |
-              CucumberWizards/target/test-results/*.xml
+          files: |
+            CucumberWizards/target/test-results/*.xml
