@@ -59,12 +59,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-
-      - name: List directory contents
-        run: |
-          echo "Listing contents of the current directory:"
-          ls -R
-
+          
       - name: Run Maven tests
        # working-directory: CucumberWizards
         run: |
