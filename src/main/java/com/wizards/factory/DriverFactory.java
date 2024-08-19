@@ -40,14 +40,7 @@ public class DriverFactory {
 			//WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
 		}
-		else if(browser.equals("headless"))
-		{
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			tlDriver.set(new ChromeDriver(options));
-		}
+		
 		else if(browser.equals("firefox"))
 		{
 			//WebDriverManager.firefoxdriver().setup();
