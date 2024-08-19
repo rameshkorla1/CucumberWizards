@@ -140,17 +140,11 @@
   			<version>3.0.0-M3</version>
   			  <configuration>
 				  <includes>
-					  <include>**/MailRoomRunner.java</include>
+					  <include>**/TestRunner.java</include>
 				  </includes>
 				  <testFailureIgnore>true</testFailureIgnore>
 			  </configuration>
-			  <dependencies>
-				  <dependency>
-					  <groupId>org.apache.maven.surefire</groupId>
-					  <artifactId>surefire-junit47</artifactId>
-					  <version>3.0.0-M3</version>
-				  </dependency>
-			  </dependencies>
+			  
   		</plugin>
   	</plugins>
   </build>
