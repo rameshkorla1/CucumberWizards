@@ -1,25 +1,25 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "005d1d89-ec75-49c7-aad3-a2edad7e6ea0",
+    "id": "4914a461-f729-4641-87df-fcae45a4e6de",
     "feature": "Account Page Feature",
-    "scenario": "Accounts section count",
-    "start": 1719491245481,
+    "scenario": "Accounts page title",
+    "start": 1720264987510,
     "group": 1,
     "content": "",
     "tags": "@accountpage,@regression,",
-    "end": 1719491258000,
+    "end": 1720265004132,
     "className": "passed"
   },
   {
-    "id": "3a9176e7-257c-4b79-b054-79b113f995ac",
+    "id": "095c33d6-7a29-417a-b081-670cff6969d4",
     "feature": "Account Page Feature",
-    "scenario": "Accounts page title",
-    "start": 1719491233843,
+    "scenario": "Accounts section count",
+    "start": 1720265004169,
     "group": 1,
     "content": "",
     "tags": "@accountpage,@regression,",
-    "end": 1719491245466,
+    "end": 1720265016354,
     "className": "passed"
   }
 ]);
