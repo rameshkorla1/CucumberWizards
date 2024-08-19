@@ -59,7 +59,8 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-          
+      - name: Set up ChromeDriver
+        uses: actions/setup-chromedriver@v1   
       - name: Run Maven tests
        # working-directory: CucumberWizards
         run: |
