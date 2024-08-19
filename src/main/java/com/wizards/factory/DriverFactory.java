@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DriverFactory {
 	
-	private WebDriver driver;	
+	public WebDriver driver;	
 	public Properties prop;
 	public WebDriverWait wait;
 	
