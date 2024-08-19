@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -38,6 +39,14 @@ public class DriverFactory {
 		{
 			//WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
+		}
+		else if(browser.equals("headless"))
+		{
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			tlDriver.set(new ChromeDriver(options));
 		}
 		else if(browser.equals("firefox"))
 		{
