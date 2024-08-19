@@ -59,7 +59,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-          
+
       - name: Run Maven tests
        # working-directory: CucumberWizards
         run: |
