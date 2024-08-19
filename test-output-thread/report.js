@@ -1,25 +1,25 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "b60a5f8f-366e-469c-ae61-d48fb14e6b66",
-    "feature": "Account Page Feature",
-    "scenario": "Accounts section count",
-    "start": 1724077064121,
+    "id": "61e6b6a2-ec04-4152-a468-56ee752f09d1",
+    "feature": "Contact Us Feature",
+    "scenario": "Contact Us Scenario with different set of Data",
+    "start": 1724079916076,
     "group": 1,
     "content": "",
-    "tags": "@accountpage,@regression,",
-    "end": 1724077074934,
+    "tags": "@contactus,",
+    "end": 1724079938467,
     "className": "passed"
   },
   {
-    "id": "f5136319-9ff0-4a60-a54e-c0f8f8103e72",
-    "feature": "Account Page Feature",
-    "scenario": "Accounts page title",
-    "start": 1724077042834,
+    "id": "89362f0b-4d8f-4d12-9f61-56f2f5f77bb8",
+    "feature": "Contact Us Feature",
+    "scenario": "Contact Us Scenario with different set of Data",
+    "start": 1724079938488,
     "group": 1,
     "content": "",
-    "tags": "@accountpage,@regression,",
-    "end": 1724077064091,
+    "tags": "@contactus,",
+    "end": 1724079960667,
     "className": "passed"
   }
 ]);
