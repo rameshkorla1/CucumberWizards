@@ -63,7 +63,7 @@ jobs:
       - name: Run Maven tests
        # working-directory: CucumberWizards
         run: |
-          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"chromeOptions.args=--headless,--no-sandbox,--disable-dev-shm-usage"
+          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"${{{ inputs.browser }}"
        # Test Results
       - name: Upload test results
         uses: actions/upload-artifact@v4
