@@ -64,17 +64,17 @@ jobs:
        # working-directory: CucumberWizards
         run: |
           mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"browser=${{ inputs.browser }}"
-
+       # Test Results
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-results
-          path: CucumberWizards/target/test-results/*.xml
+          path: /home/runner/work/CucumberWizards/CucumberWizards/target/test-results/*.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           files: |
-            CucumberWizards/target/test-results/*.xml
+            /home/runner/work/CucumberWizards/CucumberWizards/target/test-results/*.xml
