@@ -28,10 +28,6 @@ on:
         default: chrome
         required: true
 
-  # Uncomment the schedule section below to enable cron scheduling
-  # schedule:
-  #   - cron: '0 0 * * 1-5'
-
 permissions:
   contents: read
   pages: write
@@ -61,10 +57,9 @@ jobs:
           cache: maven
 
       - name: Run Maven tests
-       # working-directory: CucumberWizards
         run: |
-          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"${{{ inputs.browser }}"
-       # Test Results
+          mvn clean verify -Dcucumber.feature=./src/test/resources/features -Dcucumber.filter.tags=@${{ inputs.tag }} -Dbrowser=${{ inputs.browser }}
+          
       - name: Upload test results
         uses: actions/upload-artifact@v4
         if: always()
