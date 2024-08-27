@@ -59,7 +59,7 @@ jobs:
       - name: Run Maven tests
         run: |
           mvn clean verify -Dcucumber.feature=./src/test/resources/features -Dcucumber.filter.tags=@${{ inputs.tag }} -Dbrowser=${{ inputs.browser }}
-          
+       # Test Results
       - name: Upload test results
         uses: actions/upload-artifact@v4
         if: always()
