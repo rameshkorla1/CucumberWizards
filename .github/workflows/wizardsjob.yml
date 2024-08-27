@@ -28,6 +28,10 @@ on:
         default: chrome
         required: true
 
+  # Uncomment the schedule section below to enable cron scheduling
+  # schedule:
+  #   - cron: '0 0 * * 1-5'
+
 permissions:
   contents: read
   pages: write
@@ -56,24 +60,21 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Install Allure
+      - name: Run Maven tests
+       # working-directory: CucumberWizards
         run: |
-           curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.18.1/allure-2.18.1.tgz
-           tar -zxvf allure.tgz
-           sudo mv allure-2.18.1 /opt/allure
-           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
-        shell: bash
-
-      - name: Run Maven tests with Allure
-        run: |
-          mvn clean verify -Dcucumber.feature=./src/test/resources/features -Dcucumber.filter.tags=@${{ inputs.tag }} -Dbrowser=${{ inputs.browser }}
-
-      - name: Generate Allure Report
-        run: |
-          allure generate target/allure-results --clean -o allure-report
-
-      - name: Deploy Allure Report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"${{ inputs.browser }}"
+       # Test Results
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-report
+          name: test-results
+          path: /home/runner/work/CucumberWizards/CucumberWizards/target/test-results/*.xml
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            /home/runner/work/CucumberWizards/CucumberWizards/target/test-results/*.xml
