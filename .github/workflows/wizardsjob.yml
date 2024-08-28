@@ -62,12 +62,24 @@ jobs:
       - name: Install ChromeDriver
         run: |
           CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-          curl -L -o chromedriver.zip "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
-          unzip chromedriver.zip
+          echo "Chrome version: $CHROME_VERSION"
+          CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+          echo "ChromeDriver version: $CHROMEDRIVER_VERSION"
+          wget -q -O chromedriver.zip "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+          if [ ! -f chromedriver.zip ]; then
+            echo "ChromeDriver download failed"
+            exit 1
+          fi
+          unzip -q chromedriver.zip
+          if [ ! -f chromedriver ]; then
+            echo "ChromeDriver extraction failed"
+            exit 1
+          fi
           sudo mv chromedriver /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
-      
+          echo "ChromeDriver installed successfully"
+          chromedriver --version
+          
       - name: Run Maven tests
         run: |
           mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"${{ inputs.browser }}" -Dwebdriver.chrome.args="--headless --no-sandbox --disable-dev-shm-usage"
