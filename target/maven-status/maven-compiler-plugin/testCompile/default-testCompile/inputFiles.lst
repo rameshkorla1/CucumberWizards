@@ -1,7 +1,7 @@
-C:\workspace\CucumberWizards\src\test\java\com\wizards\Runner\TestRunner.java
-C:\workspace\CucumberWizards\src\test\java\com\wizards\steps\AccountPageSteps.java
-C:\workspace\CucumberWizards\src\test\java\com\wizards\steps\CreateAccountPageSteps.java
-C:\workspace\CucumberWizards\src\test\java\com\wizards\steps\LoginPageSteps.java
-C:\workspace\CucumberWizards\src\test\java\com\wizards\steps\ContactUsPageSteps.java
-C:\workspace\CucumberWizards\src\test\java\com\wizards\AppHooks\AppHooks.java
-C:\workspace\CucumberWizards\src\test\java\com\wizards\steps\FailedRun.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/steps/FailedRun.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/AppHooks/AppHooks.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/steps/AccountPageSteps.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/steps/CreateAccountPageSteps.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/Runner/TestRunner.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/steps/LoginPageSteps.java
+/home/runner/work/CucumberWizards/CucumberWizards/src/test/java/com/wizards/steps/ContactUsPageSteps.java
