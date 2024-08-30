@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class DriverFactory {
@@ -37,18 +37,18 @@ public class DriverFactory {
 		
 		if(browser.equals("chrome"))
 		{
-			//WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
 		}
 		
 		else if(browser.equals("firefox"))
 		{
-			//WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
 		}
 		else if(browser.equals("edge"))
 		{
-			//WebDriverManager.edgedriver().setup();
+			WebDriverManager.edgedriver().setup();
 			tlDriver.set(new EdgeDriver());
 		}
 		
