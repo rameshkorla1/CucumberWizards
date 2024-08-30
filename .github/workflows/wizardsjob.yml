@@ -25,10 +25,6 @@ on:
         default: chrome
         required: true
 
-  # Uncomment the schedule section below to enable cron scheduling
-  # schedule:
-  #   - cron: '0 0 * * 1-5'
-
 permissions:
   contents: write
   pages: write
@@ -73,12 +69,13 @@ jobs:
           sudo chmod +x /usr/local/bin/chromedriver
           chromedriver --version
           
-      # Step to install Allure
+      # Step to download and install Allure manually
       - name: Install Allure
         run: |
-          sudo apt-add-repository ppa:qameta/allure
-          sudo apt-get update
-          sudo apt-get install allure
+          wget -q -O allure-2.21.0.tgz https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.tgz
+          tar -xzf allure-2.21.0.tgz
+          sudo mv allure-2.21.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
 
       - name: Run Maven tests
         run: |
