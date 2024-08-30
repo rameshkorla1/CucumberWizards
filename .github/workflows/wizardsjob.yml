@@ -57,7 +57,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
       
-      # New steps to install and configure Chrome
       - name: Install Chrome
         run: |
           sudo apt-get update
@@ -66,44 +65,52 @@ jobs:
       - name: Install ChromeDriver
         run: |
           CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1-3)
-          echo "Chrome version: $CHROME_VERSION"
           LATEST_CHROMEDRIVER=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-          echo "Latest ChromeDriver version: $LATEST_CHROMEDRIVER"
           CHROMEDRIVER_URL="https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER}/chromedriver_linux64.zip"
-          echo "Downloading ChromeDriver from: $CHROMEDRIVER_URL"
           wget -q -O chromedriver.zip "$CHROMEDRIVER_URL"
-          if [ ! -f chromedriver.zip ]; then
-            echo "ChromeDriver download failed"
-            exit 1
-          fi
           unzip -q chromedriver.zip
-          if [ ! -f chromedriver ]; then
-            echo "ChromeDriver extraction failed"
-            exit 1
-          fi
           sudo mv chromedriver /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
-          echo "ChromeDriver installed successfully"
           chromedriver --version
           
+      # Step to install Allure
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install allure
+
       - name: Run Maven tests
-       # working-directory: CucumberWizards
         run: |
           mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"${{ inputs.browser }}"
-       # Test Results
+      
+      # Generate Allure Report
+      - name: Generate Allure Report
+        run: |
+          allure generate target/allure-results --clean -o target/allure-report
+      
+      # Upload Allure Report as Artifact
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-report
+          path: target/allure-report
+
+      # Test Results
       - name: Upload test results
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-results
-          path: /home/runner/work/CucumberWizards/CucumberWizards/target/test-results/*.xml
+          path: target/test-results/*.xml
       
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           files: |
-            /home/runner/work/CucumberWizards/CucumberWizards/target/test-results/*.xml
+            target/test-results/*.xml
       
       # Push to gh-pages
       - name: Push to gh-pages
