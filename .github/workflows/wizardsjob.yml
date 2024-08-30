@@ -79,7 +79,7 @@ jobs:
 
       - name: Run Maven tests
         run: |
-          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"${{ inputs.browser }}"
+          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"browser=${{ inputs.browser }}"
       
       # Generate Allure Report
       - name: Generate Allure Report
