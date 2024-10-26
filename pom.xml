@@ -59,12 +59,13 @@
     <artifactId>selenium-java</artifactId>
     <version>4.22.0</version>
 </dependency>
-    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+   <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
-    <version>5.0.2</version>
+    <version>5.9.2</version>
 </dependency>
+
     <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber6-adapter -->
 <!-- <dependency>
     <groupId>tech.grasshopper</groupId>
