@@ -37,8 +37,14 @@ public class DriverFactory {
 		
 		if(browser.equals("chrome"))
 		{
-			WebDriverManager.chromedriver().setup();
-			tlDriver.set(new ChromeDriver());
+			//WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless=new");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--remote-allow-origins=*");
+			tlDriver.set(new ChromeDriver(options));
 		}
 		
 		else if(browser.equals("firefox"))
