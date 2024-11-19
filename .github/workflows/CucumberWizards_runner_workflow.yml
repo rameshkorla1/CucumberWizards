@@ -1,11 +1,11 @@
-name: CucumberWizards
+name: Wizards_Regression
 concurrency:
   group: main
   cancel-in-progress: false
 
 on:
-  schedule:
-    - cron: '0 0 * * 5'
+  #schedule:
+    # - cron: '0 0 * * 5'
   workflow_dispatch:
     inputs:
       tag:
@@ -13,7 +13,7 @@ on:
         description: tag
         required: false
         options:
-          - ALL_TESTS
+          - Regression
           - AccountPage
           - ContactUs
           - CreateAccount
@@ -44,8 +44,19 @@ jobs:
           if("${{inputs.tag}}" -eq "ALL_TESTS") {
             mvn clean verify
           } else {
-            mvn clean verify -D"cucumber.feature=./src/test/resources/OrangeHRMFeatures" -D"cucumber.filter.tags=@${{inputs.tag}}"
+            mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{inputs.tag}}" -Dbrowser="chrome"
           }
+
+      - name: Generate Allure Reports
+        run: |
+          allure generate --clean
+        working-directory: CucumberWizards
+
+      - name: Upload Allure Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: CucumberWizards/allure-report
 
       - id: copy-files
         working-directory: CucumberWizards
@@ -76,6 +87,10 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: CucumberWizards/github-pages
+      - name: Upload Allure Report to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: CucumberWizards/allure-report
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

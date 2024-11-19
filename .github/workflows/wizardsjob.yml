@@ -52,7 +52,8 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-
+                      
+      # Step to download and install Allure manually
       - name: Install Allure
         run: |
           wget -q -O allure-2.21.0.tgz https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.tgz
