@@ -1,4 +1,4 @@
 $(document).ready(function() {
-CucumberHTML.timelineItems.pushArray([{"id":"0d89c207-6606-49b6-b710-1db5fd5826de","feature":"Account Page Feature","scenario":"Accounts section count","start":1725002972542,"group":1,"content":"","tags":"@accountpage,@regression,","end":1725002985791,"className":"passed"},{"id":"c7b6bf57-3d15-4677-aa6f-2ba3d08d3e6b","feature":"Account Page Feature","scenario":"Accounts page title","start":1725002958097,"group":1,"content":"","tags":"@accountpage,@regression,","end":1725002972340,"className":"passed"}]);
+CucumberHTML.timelineItems.pushArray([{"id":"8f366aa1-82e0-4236-ade2-6b1bb4583f6c","feature":"Account Page Feature","scenario":"Accounts page title","start":1732021927955,"group":1,"content":"","tags":"@accountpage,@regression,","end":1732021942502,"className":"passed"},{"id":"ea364569-176b-49ec-9986-3d9b5921cffe","feature":"Account Page Feature","scenario":"Accounts section count","start":1732021942788,"group":1,"content":"","tags":"@accountpage,@regression,","end":1732021951238,"className":"passed"}]);
 CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[main,5,main]"}]);
 });
