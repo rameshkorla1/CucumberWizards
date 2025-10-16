@@ -86,6 +86,7 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./target/allure-report
           keep_files: true  # preserve history
+          force_orphan: true
 
       # 📊 Upload raw test results (JUnit XML)
       - name: Upload Test Results
