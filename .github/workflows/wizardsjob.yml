@@ -1,5 +1,5 @@
-name: Test_Regression_job
 
+name: CucumberWizards Tests & Publish Allure Report
 concurrency:
   group: Wizards
   cancel-in-progress: false
@@ -20,20 +20,17 @@ on:
       browser:
         type: choice
         description: "Browser to run tests"
+        required: true
+        default: chrome
         options:
           - chrome
           - edge
           - firefox
-        default: chrome
-        required: true
 
 permissions:
   contents: write
   pages: write
   id-token: write
-  issues: read
-  checks: write
-  pull-requests: write
 
 jobs:
   build:
@@ -41,6 +38,12 @@ jobs:
     timeout-minutes: 720
 
     steps:
+      # 🧩 Checkout code
+      - uses: actions/checkout@v4
+
+      # ☕ Setup Java + Maven cache
+      - name: Set up Java 11 with Maven cache
+        uses: actions/setup-java@v4
       # Checkout code from repository
       - uses: actions/checkout@v4
 
@@ -50,7 +53,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+          cache: 'maven'
 
+      # ⚙️ Install Allure CLI
       # Set up Maven
       - name: Set up Maven
         uses: actions/setup-java@v3
@@ -67,35 +72,43 @@ jobs:
           sudo mv allure-2.21.0 /opt/allure
           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
 
-      # Run Maven tests with the provided tag and browser input
-      - name: Run Maven tests
+      # 🔄 Restore previous Allure history for trend graphs
+      - name: Restore Allure History
         run: |
-          mvn clean verify -D"cucumber.feature=./src/test/resources/features" -D"cucumber.filter.tags=@${{ inputs.tag }}" -D"browser=${{ inputs.browser }}"
+          git fetch origin gh-pages || true
+          mkdir -p target/allure-results/history
+          if git show origin/gh-pages:history >/dev/null 2>&1; then
+            git show origin/gh-pages:history | tar -xO || true
+          fi
 
-      # Generate Allure Report
+       # Run Maven tests with the provided tag and browser input
+      - name: Run Maven Tests     
+        run: |
+          mvn clean verify -D"cucumber.feature=./src/test/resources/features" \
+          -D"cucumber.filter.tags=@${{ inputs.tag }}" \
+          -D"browser=${{ inputs.browser }}"
+
+      # Generate Allure HTML Report
       - name: Generate Allure Report
         run: |
           allure generate target/allure-results --clean -o target/allure-report
+          cp -r target/allure-report/history history || true
 
-      # Upload Allure Report as artifact
-      - name: Upload Allure Report
+      # 📦 Upload Allure Report as artifact (for download)
+      - name: Upload Allure Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: target/allure-report
 
-      # Deploy Allure Report to GitHub Pages
+      # 🚀 Deploy Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
-        if: success()
-        run: |
-          mv target/allure-report out
-          touch out/.nojekyll
-          git config user.name "rameshkorla1"
-          git config user.email "rameshkorla.udemy@gmail.com"
-          git checkout -b gh-pages
-          git add out
-          git commit -m "Deploy Allure Report to GitHub Pages"
-          git push origin gh-pages --force
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./target/allure-report
+          keep_files: true  # preserve history
 
       # Upload Test Results
       - name: Upload Test Results
@@ -105,9 +118,11 @@ jobs:
           path: target/test-results/*.xml
 
       # Publish Test Results
-      - name: Publish Test Results
+      - name: Publish Test Results Summary
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: |
-            target/test-results/*.xml
+         files: target/test-results/*.xml
+         check_run: false          # ✅ disables check creation
+         job_summary: true         # ✅ adds summary directly to Actions UI
+
