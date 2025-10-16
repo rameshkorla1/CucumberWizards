@@ -1,4 +1,4 @@
-name: Run Tests & Publish Allure Report
+name: CucumberWizards Tests & Publish Allure Report
 
 on:
   workflow_dispatch:
@@ -98,9 +98,11 @@ jobs:
           name: test-results
           path: target/test-results/*.xml
 
-      # ✅ Publish test results summary in Actions UI
       - name: Publish Test Results Summary
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: target/test-results/*.xml
+         files: target/test-results/*.xml
+         check_run: false          # ✅ disables check creation
+         job_summary: true         # ✅ adds summary directly to Actions UI
+
