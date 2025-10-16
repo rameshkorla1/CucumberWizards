@@ -1,3 +1,4 @@
+@Regression
 @Login
 Feature: LoginPage Feature
 
