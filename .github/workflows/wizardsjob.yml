@@ -102,3 +102,6 @@ jobs:
          files: target/test-results/*.xml
          check_run: false          # ✅ disables check creation
          job_summary: true         # ✅ adds summary directly to Actions UI
+
+      - name: Add Allure Report URL to Summary
+        run: echo "🌐 [View Allure Report](https://rameshkorla1.github.io/CucumberWizards/)" >> $GITHUB_STEP_SUMMARY
